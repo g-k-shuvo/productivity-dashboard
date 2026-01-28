@@ -1,0 +1,79 @@
+.notes-ai-widget {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.notes-ai-widget h3 {
+  margin: 0 0 20px 0;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.notes-input-section {
+  margin-bottom: 20px;
+}
+
+.notes-textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 0.95rem;
+  font-family: inherit;
+  resize: vertical;
+  margin-bottom: 10px;
+}
+
+.notes-textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.notes-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.notes-actions button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.3s;
+}
+
+.notes-actions button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.notes-actions button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.notes-result {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.notes-result h4 {
+  margin: 0 0 10px 0;
+  color: white;
+  font-size: 1rem;
+}
+
+.result-content {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+  white-space: pre-wrap;
+  line-height: 1.6;
+}
+

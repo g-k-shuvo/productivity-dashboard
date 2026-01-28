@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Momentum Productivity Dashboard",
+  "version": "1.0.0",
+  "description": "Transform your new tab into a productivity dashboard",
+  "permissions": [
+    "storage",
+    "tabs",
+    "bookmarks",
+    "geolocation",
+    "activeTab",
+    "alarms"
+  ],
+  "host_permissions": [
+    "https://*/*"
+  ],
+  "chrome_url_overrides": {
+    "newtab": "src/newtab/index.html"
+  },
+  "background": {
+    "service_worker": "background/index.js",
+    "type": "module"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "src/settings/index.html",
+    "default_title": "Momentum Settings"
+  }
+}
+

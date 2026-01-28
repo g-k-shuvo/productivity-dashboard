@@ -1,0 +1,123 @@
+.pomodoro-widget {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+.pomodoro-widget h3 {
+  margin: 0 0 20px 0;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.session-type-selector {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.session-type-selector button {
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.session-type-selector button.active {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: white;
+}
+
+.session-type-selector button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.session-type-selector button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.timer-display {
+  margin: 30px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.timer-circle {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.progress-ring {
+  transform: rotate(-90deg);
+}
+
+.progress-ring-circle {
+  transition: stroke-dashoffset 0.35s;
+}
+
+.timer-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.timer-controls {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.timer-controls button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.start-button {
+  background: rgba(76, 175, 80, 0.8);
+  color: white;
+}
+
+.start-button:hover {
+  background: rgba(76, 175, 80, 1);
+}
+
+.pause-button {
+  background: rgba(255, 152, 0, 0.8);
+  color: white;
+}
+
+.pause-button:hover {
+  background: rgba(255, 152, 0, 1);
+}
+
+.reset-button {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.reset-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.sessions-completed {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+

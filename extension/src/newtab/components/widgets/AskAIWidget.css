@@ -1,0 +1,96 @@
+.ask-ai-widget {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+}
+
+.ask-ai-widget h3 {
+  margin: 0 0 20px 0;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.empty-chat {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 40px;
+}
+
+.message {
+  padding: 10px 15px;
+  border-radius: 8px;
+  max-width: 80%;
+}
+
+.message.user {
+  align-self: flex-end;
+  background: rgba(76, 175, 80, 0.3);
+}
+
+.message.assistant {
+  align-self: flex-start;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.message-content {
+  color: white;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.chat-input-section {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 0.95rem;
+  font-family: inherit;
+  resize: none;
+}
+
+.chat-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.chat-input-section button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.3s;
+}
+
+.chat-input-section button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.chat-input-section button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+

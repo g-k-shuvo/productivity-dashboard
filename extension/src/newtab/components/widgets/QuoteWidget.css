@@ -1,0 +1,29 @@
+.quote-widget {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.quote-widget.loading {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.quote-text {
+  font-size: 1.5rem;
+  color: white;
+  font-weight: 300;
+  font-style: italic;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.quote-author {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 400;
+}
+

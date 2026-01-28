@@ -1,0 +1,55 @@
+.focus-widget {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.focus-widget:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.focus-text {
+  font-size: 1.5rem;
+  color: white;
+  font-weight: 300;
+  text-align: center;
+}
+
+.focus-placeholder {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  font-style: italic;
+}
+
+.focus-widget.editing {
+  cursor: default;
+}
+
+.focus-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-align: center;
+  padding: 0.5rem;
+  outline: none;
+}
+
+.focus-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.focus-input:focus {
+  border-bottom-color: white;
+}
+

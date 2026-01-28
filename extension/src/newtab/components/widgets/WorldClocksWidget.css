@@ -1,0 +1,44 @@
+.world-clocks-widget {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.world-clocks-widget h3 {
+  margin: 0 0 20px 0;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.clocks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.clock-item {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.clock-label {
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.clock-time {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.clock-timezone {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+}
+

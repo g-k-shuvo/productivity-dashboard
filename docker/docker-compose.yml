@@ -1,0 +1,74 @@
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: momentum-postgres
+    environment:
+      POSTGRES_DB: ${DB_NAME:-momentum_db}
+      POSTGRES_USER: ${DB_USER:-momentum_user}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-momentum_password}
+    ports:
+      - "${DB_PORT:-5432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ../database/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-momentum_user} -d ${DB_NAME:-momentum_db}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - momentum-network
+
+  redis:
+    image: redis:7-alpine
+    container_name: momentum-redis
+    ports:
+      - "${REDIS_PORT:-6379}:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - momentum-network
+    profiles:
+      - production
+
+  backend:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.backend
+    container_name: momentum-backend
+    environment:
+      NODE_ENV: ${NODE_ENV:-development}
+      PORT: ${PORT:-3000}
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: ${DB_NAME:-momentum_db}
+      DB_USER: ${DB_USER:-momentum_user}
+      DB_PASSWORD: ${DB_PASSWORD:-momentum_password}
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+    ports:
+      - "${PORT:-3000}:3000"
+    volumes:
+      - ../backend:/app
+      - /app/node_modules
+      - ../backend/uploads:/app/uploads
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - momentum-network
+    command: npm run dev
+
+volumes:
+  postgres_data:
+  redis_data:
+
+networks:
+  momentum-network:
+    driver: bridge
+
