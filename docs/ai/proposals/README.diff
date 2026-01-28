@@ -1,0 +1,53 @@
+--- README.md (current)
++++ README.md (proposed)
+@@ -43,9 +43,7 @@ productivity-dashboard/
+    docker-compose -f docker/docker-compose.yml up -d
+    ```
+
+-4. Install dependencies:
++4. Install dependencies (workspaces handle all packages):
+    ```bash
+    npm install
+-   cd backend && npm install
+-   cd ../extension && npm install
+    ```
+
+ 5. Run development servers:
+
+---
+
+EXPLANATION:
+
+The root package.json uses npm workspaces:
+
+```json
+{
+  "workspaces": [
+    "backend",
+    "extension"
+  ]
+}
+```
+
+With npm workspaces, running `npm install` at the repository root automatically
+installs dependencies for all workspace packages (backend and extension).
+
+The current instructions to `cd backend && npm install` and `cd extension && npm install`
+are redundant and could confuse contributors.
+
+RECOMMENDED CHANGE:
+
+Replace step 4 from:
+```bash
+npm install
+cd backend && npm install
+cd ../extension && npm install
+```
+
+To:
+```bash
+npm install
+```
+
+This matches the pattern documented in CLAUDE.md which correctly states:
+> Install all | `npm install` (root, workspaces auto-resolve)
