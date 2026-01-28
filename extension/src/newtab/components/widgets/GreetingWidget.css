@@ -1,0 +1,43 @@
+.greeting-widget {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: white;
+  font-weight: 300;
+}
+
+.greeting-text {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.greeting-name {
+  cursor: pointer;
+  border-bottom: 2px dashed rgba(255, 255, 255, 0.3);
+  transition: border-color 0.2s ease;
+}
+
+.greeting-name:hover {
+  border-bottom-color: rgba(255, 255, 255, 0.6);
+}
+
+.greeting-input {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  color: white;
+  font-size: 2rem;
+  font-weight: 300;
+  text-align: center;
+  padding: 0;
+  outline: none;
+  min-width: 100px;
+  max-width: 300px;
+}
+
+.greeting-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.greeting-input:focus {
+  border-bottom-color: white;
+}
