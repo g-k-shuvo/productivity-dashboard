@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import QuoteWidget from '../QuoteWidget';
 
 // Mock the API service
-jest.mock('../../../shared/services/api', () => ({
+jest.mock('../../../../shared/services/api', () => ({
   apiService: {
     get: jest.fn(),
   },
