@@ -1,5 +1,3 @@
-import { AuthController } from '../authController';
-
 describe('AuthController', () => {
   describe('googleCallback', () => {
     it('should handle Google OAuth callback', async () => {

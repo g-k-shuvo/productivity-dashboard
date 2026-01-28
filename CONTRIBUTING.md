@@ -5,11 +5,9 @@ Thank you for your interest in contributing! This document provides guidelines f
 ## Development Setup
 
 1. Fork and clone the repository
-2. Install dependencies:
+2. Install dependencies (npm workspaces handle all packages):
    ```bash
    npm install
-   cd backend && npm install
-   cd ../extension && npm install
    ```
 3. Copy `.env.example` to `.env` and configure
 4. Start Docker services:
@@ -34,7 +32,7 @@ Thank you for your interest in contributing! This document provides guidelines f
 
 ## Pull Request Process
 
-1. Create a feature branch from `develop`
+1. Create a feature branch from `main`
 2. Make your changes
 3. Write/update tests
 4. Update documentation if needed

@@ -41,11 +41,9 @@ productivity-dashboard/
    docker-compose -f docker/docker-compose.yml up -d
    ```
 
-4. Install dependencies:
+4. Install dependencies (npm workspaces handle all packages):
    ```bash
    npm install
-   cd backend && npm install
-   cd ../extension && npm install
    ```
 
 5. Run development servers:

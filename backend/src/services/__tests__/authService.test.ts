@@ -1,5 +1,3 @@
-import { AuthService } from '../authService';
-
 describe('AuthService', () => {
   describe('generateTokenPair', () => {
     it('should generate access and refresh tokens', async () => {
