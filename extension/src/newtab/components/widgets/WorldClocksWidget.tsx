@@ -8,7 +8,7 @@ interface Clock {
 }
 
 const WorldClocksWidget: React.FC = () => {
-  const [clocks, setClocks] = useState<Clock[]>([
+  const [clocks] = useState<Clock[]>([
     { id: '1', label: 'New York', timezone: 'America/New_York' },
     { id: '2', label: 'London', timezone: 'Europe/London' },
     { id: '3', label: 'Tokyo', timezone: 'Asia/Tokyo' },

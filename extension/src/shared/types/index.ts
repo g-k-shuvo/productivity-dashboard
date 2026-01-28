@@ -21,7 +21,7 @@ export interface Settings {
     soundscapes?: boolean;
     notesAI?: boolean;
     askAI?: boolean;
-    [key: string]: boolean;
+    [key: string]: boolean | undefined;
   };
 }
 

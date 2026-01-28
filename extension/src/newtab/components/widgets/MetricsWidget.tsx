@@ -2,13 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { apiService } from '../../../shared/services/api';
 import './MetricsWidget.css';
 
-interface Metric {
-  id: string;
-  metricType: string;
-  value: number;
-  date: string;
-}
-
 interface MetricStats {
   type: string;
   total: number;

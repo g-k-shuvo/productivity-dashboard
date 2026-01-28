@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSettingsStore } from '../newtab/store/useSettingsStore';
+import { Settings } from '../shared/types';
 import './SettingsApp.css';
 
 const SettingsApp: React.FC = () => {

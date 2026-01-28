@@ -1,7 +1,8 @@
 import '@testing-library/jest-dom';
 
 // Mock chrome APIs
-global.chrome = {
+declare const global: typeof globalThis;
+(global as typeof globalThis & { chrome: typeof chrome }).chrome = {
   storage: {
     local: {
       get: jest.fn(),
