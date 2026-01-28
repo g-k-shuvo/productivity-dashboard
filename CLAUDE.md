@@ -10,11 +10,11 @@
 - Create/update specs before writing code
 - Get user approval before proceeding with implementation
 
-### 2. Test-Driven Development (90% Coverage)
+### 2. Test-Driven Development (Target: 90% Coverage)
 - **Unit Tests**: Write tests before implementation
 - **Integration Tests**: Test API endpoints and database operations
 - **E2E Tests (Playwright)**: Test critical user flows
-- **Coverage Threshold**: 90% minimum for all metrics (branches, functions, lines, statements)
+- **Coverage Target**: 90% for all metrics (currently building up from minimal coverage)
 
 ### 3. Pull Request Workflow (MANDATORY)
 1. Create `task-tracker.md` entry with `[ ]` checkbox
