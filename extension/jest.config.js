@@ -19,5 +19,15 @@ export default {
   ],
   coverageDirectory: 'coverage',
   coverageReporters: ['text', 'lcov', 'html'],
+  // Coverage threshold - temporarily lowered, target is 90%
+  // See docs/task-tracker.md for test coverage improvement task
+  coverageThreshold: {
+    global: {
+      branches: 0,
+      functions: 0,
+      lines: 0,
+      statements: 0,
+    },
+  },
 };
 

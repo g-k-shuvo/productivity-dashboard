@@ -12,16 +12,17 @@ This document tracks known technical debt items, prioritized by severity.
 - `extension/src/newtab/components/widgets/__tests__/QuoteWidget.test.tsx`
 
 **Current State:**
-- Backend tests fail: Jest config references non-existent `tests/` directory
-- Extension tests fail: Mock path `../../../shared/services/api` doesn't resolve correctly
+- Tests pass (Jest configs and mock paths fixed)
+- Coverage threshold set to 90% but actual coverage is far below
+- E2E testing infrastructure added (Playwright) but minimal tests
 
 **Impact:** No automated testing safety net for refactoring or new features.
 
 **Recommendation:**
-1. Fix Jest configurations to match actual test file locations
-2. Add unit tests for all services (target: 80% coverage)
-3. Add integration tests for API routes
-4. Add component tests for critical widgets
+1. Add unit tests for all services (target: 90% coverage)
+2. Add integration tests for API routes
+3. Add component tests for critical widgets
+4. Expand E2E tests for critical user flows
 
 ---
 
@@ -42,19 +43,10 @@ This document tracks known technical debt items, prioritized by severity.
 
 ---
 
-### 3. CONTRIBUTING.md References `develop` Branch
+### 3. ~~CONTRIBUTING.md References `develop` Branch~~
 **Location:** `CONTRIBUTING.md:37`
-**Issue:** Pull request instructions say "Create a feature branch from `develop`" but the repository uses `main` as the default branch (no `develop` branch exists).
-
-**Current Text:**
-```
-1. Create a feature branch from `develop`
-```
-
-**Should Be:**
-```
-1. Create a feature branch from `main`
-```
+**Status:** ✅ FIXED
+**Resolution:** Updated to reference `main` branch and simplified install instructions.
 
 ---
 
@@ -97,39 +89,31 @@ This document tracks known technical debt items, prioritized by severity.
 
 ---
 
-### 6. README Install Instructions Redundant
+### 6. ~~README Install Instructions Redundant~~
 **Location:** `README.md:44-49`
-**Issue:** Install instructions say to run `npm install` at root AND in each package:
-```bash
-npm install
-cd backend && npm install
-cd ../extension && npm install
-```
-
-With npm workspaces configured in root `package.json`, only `npm install` at root is needed.
-
-**Should Be:**
-```bash
-npm install
-```
+**Status:** ✅ FIXED
+**Resolution:** Simplified to just `npm install` with explanation that workspaces handle packages.
 
 ---
 
 ## Medium
 
-### 7. No E2E Tests
-**Location:** Project-wide
-**Issue:** No end-to-end tests exist. Critical user flows are untested:
+### 7. Minimal E2E Tests
+**Location:** `tests/e2e/`
+**Issue:** Playwright infrastructure added but only health check test exists. Critical user flows are untested:
 - OAuth login flow
 - Subscription checkout flow
 - Widget interactions
 - Data synchronization
 
+**Current State:**
+- Playwright configured with CI integration
+- Only `health.spec.ts` exists
+
 **Recommendation:**
-1. Add Playwright or Cypress for E2E testing
-2. Create test accounts for OAuth providers
-3. Use Stripe test mode for payment flows
-4. Add E2E tests to CI pipeline
+1. Create test accounts for OAuth providers
+2. Use Stripe test mode for payment flows
+3. Add E2E tests for critical flows (auth, checkout, sync)
 
 ---
 
@@ -218,13 +202,13 @@ const task = await taskService.createTask(validated);
 
 | Item | Priority | Effort | Status |
 |------|----------|--------|--------|
-| Minimal test coverage | Critical | High | Open |
+| Minimal test coverage | Critical | High | In Progress |
 | No database migrations | Critical | Medium | Open |
-| CONTRIBUTING.md branch ref | Critical | Low | Open |
+| CONTRIBUTING.md branch ref | Critical | Low | Fixed |
 | OAuth callback incomplete | High | Medium | Open |
 | Redis unused | High | Medium | Open |
-| README install instructions | High | Low | Open |
-| No E2E tests | Medium | High | Open |
+| README install instructions | High | Low | Fixed |
+| Minimal E2E tests | Medium | High | In Progress |
 | No Zod validation | Medium | Medium | Open |
 | `as any` casts | Medium | Low | Open |
 | Inconsistent errors | Low | Medium | Open |

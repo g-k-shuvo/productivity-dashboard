@@ -1,5 +1,3 @@
-import { logger } from '../config/logger';
-
 export interface Quote {
   text: string;
   author: string;

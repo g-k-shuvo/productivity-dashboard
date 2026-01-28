@@ -66,7 +66,7 @@ const QuoteWidget: React.FC = () => {
 
   return (
     <div className="quote-widget">
-      <div className="quote-text">"{quote.text}"</div>
+      <div className="quote-text">&ldquo;{quote.text}&rdquo;</div>
       {quote.author && <div className="quote-author">— {quote.author}</div>}
     </div>
   );

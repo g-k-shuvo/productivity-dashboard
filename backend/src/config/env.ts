@@ -70,10 +70,10 @@ interface Config {
 
 const getEnv = (key: string, defaultValue?: string): string => {
   const value = process.env[key];
-  if (!value && !defaultValue) {
+  if (value === undefined && defaultValue === undefined) {
     throw new Error(`Missing required environment variable: ${key}`);
   }
-  return value || defaultValue || '';
+  return value ?? defaultValue ?? '';
 };
 
 export const config: Config = {
