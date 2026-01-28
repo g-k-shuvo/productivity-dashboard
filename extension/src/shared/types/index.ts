@@ -11,6 +11,7 @@ export interface Settings {
     clock: boolean;
     quotes: boolean;
     bookmarks: boolean;
+    greeting?: boolean;
     visionBoard?: boolean;
     tabStash?: boolean;
     pomodoro?: boolean;

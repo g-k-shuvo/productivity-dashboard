@@ -20,6 +20,7 @@ const defaultSettings: Settings = {
     clock: true,
     quotes: true,
     bookmarks: true,
+    greeting: true,
   },
 };
 

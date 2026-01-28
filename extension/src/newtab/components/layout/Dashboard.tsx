@@ -19,6 +19,7 @@ import CountdownWidget from '../widgets/CountdownWidget';
 import SoundscapesWidget from '../widgets/SoundscapesWidget';
 import NotesAIWidget from '../widgets/NotesAIWidget';
 import AskAIWidget from '../widgets/AskAIWidget';
+import GreetingWidget from '../widgets/GreetingWidget';
 import './Dashboard.css';
 
 const Dashboard: React.FC = () => {
@@ -34,6 +35,7 @@ const Dashboard: React.FC = () => {
     <div className="dashboard">
       <div className="dashboard-content">
         <SearchWidget />
+        {settings?.widgets.greeting && <GreetingWidget />}
         <div className="dashboard-top-row">
           {settings?.widgets.weather && <WeatherWidget />}
           {settings?.widgets.clock && <ClockWidget />}

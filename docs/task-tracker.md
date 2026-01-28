@@ -12,13 +12,6 @@
 
 ### Backlog - High Priority (Free Features)
 
-- [ ] **Add Greeting Widget**
-  - Create `GreetingWidget.tsx` with time-based greeting ("Good morning/afternoon/evening, [Name]")
-  - Add name editing on click with local storage persistence
-  - Add widget toggle in settings
-  - Position: Above the clock in center
-  - Tests: Unit test for greeting logic and component rendering
-
 - [ ] **Wire Background Image System to Frontend**
   - Connect Unsplash service to new tab page
   - Display daily background image with fade-in animation
@@ -164,6 +157,15 @@
 
 ### Completed
 
+- [x] **Add Greeting Widget**
+  - Created `GreetingWidget.tsx` with time-based greeting
+  - Added name editing on click with local storage persistence
+  - Added `greeting` toggle in settings (enabled by default)
+  - Position: Above dashboard-top-row (above clock)
+  - Files: `greetingUtils.ts`, `GreetingWidget.tsx`, `GreetingWidget.css`
+  - Tests: 100% coverage (22 unit tests + 16 component tests)
+  - Branch: `feature/implement-task-HkdpY`
+
 - [x] Fix test configurations (Jest roots, mock paths)
   - Branch: `feature/onboarding-docs`
   - PR: #1 (Merged)
@@ -217,9 +219,9 @@ When the dev-loop picks a task, it should:
 
 | Category | Total | Done | In Progress | Backlog |
 |----------|-------|------|-------------|---------|
-| Free Features | 4 | 0 | 0 | 4 |
+| Free Features | 4 | 1 | 0 | 3 |
 | Plus Features | 4 | 0 | 0 | 4 |
 | Medium Priority | 4 | 0 | 0 | 4 |
 | Lower Priority | 4 | 0 | 0 | 4 |
 | Technical Debt | 8 | 0 | 0 | 8 |
-| **Total** | **24** | **0** | **0** | **24** |
+| **Total** | **24** | **1** | **0** | **23** |
